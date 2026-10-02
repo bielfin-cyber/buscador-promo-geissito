@@ -1,0 +1,27 @@
+BUSCADOR PROMO DO GEISSITO
+==========================
+
+WINDOWS - JEITO MAIS FACIL
+
+1. Extraia todo o conteudo do arquivo ZIP.
+2. Abra a pasta extraida.
+3. Clique duas vezes em INICIAR.bat.
+4. Aguarde a preparacao do primeiro uso.
+5. O buscador abrira no navegador.
+
+IMPORTANTE
+
+- O iniciador procura automaticamente o Python do sistema, Codex ou Pinokio.
+- Somente se nenhum deles existir sera necessario instalar Python 3.10 ou superior.
+- E necessario acesso a internet para consultar as ofertas atualizadas.
+- O buscador continua funcionando em segundo plano; a janela preta pode fechar.
+- Para encerrar o programa, use ENCERRAR.bat.
+- Se o navegador nao abrir sozinho, visite http://127.0.0.1:7860
+- Para testar tudo, execute VERIFICAR.bat depois da primeira inicializacao.
+
+GOOGLE COLAB
+
+Abra Buscador_Promo_do_Geissito.ipynb no Colab e execute as celulas na ordem.
+Quando solicitado, envie o arquivo ZIP completo.
+
+Promo do Geissito: achou promocao, achou economia!

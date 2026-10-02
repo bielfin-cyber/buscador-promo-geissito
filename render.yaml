@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: buscador-promo-do-geissito
+    runtime: docker
+    plan: free
+    autoDeploy: true
+    healthCheckPath: /
+    envVars:
+      - key: HOST
+        value: 0.0.0.0
+      - key: OPEN_BROWSER
+        value: "0"
+
