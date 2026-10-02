@@ -234,6 +234,29 @@ class OfferIndex:
         ranked.sort(key=lambda item: (-item[0][0], normalize(item[0][1])))
         return [offer for _, offer in ranked[:limit]], stats
 
+    def featured(self, limit: int = 12) -> tuple[list[Offer], dict[str, int]]:
+        """Return a varied storefront using only complete, safe source offers."""
+        offers, stats = self.refresh()
+        complete = [offer for offer in offers if offer.image and offer.price is not None]
+        complete.sort(
+            key=lambda offer: (
+                -(offer.discount or 0),
+                offer.created_at or "",
+                normalize(offer.title),
+            )
+        )
+        selected: list[Offer] = []
+        per_store: dict[str, int] = {}
+        for offer in complete:
+            store_key = normalize(offer.store)
+            if per_store.get(store_key, 0) >= 4:
+                continue
+            selected.append(offer)
+            per_store[store_key] = per_store.get(store_key, 0) + 1
+            if len(selected) >= limit:
+                break
+        return selected, stats
+
 
 def brl(value: Decimal | None) -> str:
     if value is None:
